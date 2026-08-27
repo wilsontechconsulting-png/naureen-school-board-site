@@ -226,6 +226,13 @@ h3 {
   color: var(--eagle-blue);
 }
 
+.focus-bridge-copy {
+  max-width: 24rem;
+  margin: 0;
+  color: #40516b;
+  font-size: 1.08rem;
+}
+
 .focus-bridge-heading h2 {
   color: var(--eagle-blue-deep);
   font-size: clamp(1.65rem, 3.2vw, 2.55rem);
