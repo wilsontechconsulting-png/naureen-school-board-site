@@ -1,14 +1,15 @@
 :root {
-  --ink: #17332f;
-  --muted: #4f625d;
-  --paper: #fbfaf6;
+  --ink: #10233f;
+  --muted: #536178;
+  --paper: #f6f9fd;
   --white: #ffffff;
-  --line: #d9dfd6;
-  --green: #2f6658;
-  --green-dark: #173f36;
-  --gold: #c58b2f;
-  --blue: #213f63;
-  --shadow: 0 18px 50px rgba(23, 51, 47, 0.16);
+  --line: #d7e0ec;
+  --eagle-blue: #0057a8;
+  --eagle-blue-dark: #07346b;
+  --eagle-blue-deep: #061d3f;
+  --sky: #e8f2ff;
+  --steel: #8190a6;
+  --shadow: 0 18px 50px rgba(16, 35, 63, 0.16);
 }
 
 * {
@@ -45,7 +46,7 @@ a {
   gap: 1rem;
   padding: 0.875rem clamp(1rem, 4vw, 3rem);
   color: var(--white);
-  background: rgba(23, 51, 47, 0.88);
+  background: rgba(6, 29, 63, 0.9);
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(14px);
 }
@@ -73,7 +74,7 @@ nav {
   width: 2rem;
   height: 2rem;
   place-items: center;
-  color: var(--ink);
+  color: var(--eagle-blue-dark);
   background: var(--white);
   border-radius: 6px;
 }
@@ -90,7 +91,7 @@ nav a {
 
 nav a:hover,
 nav a:focus-visible {
-  color: #f7dca1;
+  color: #cce4ff;
 }
 
 .hero {
@@ -116,8 +117,8 @@ nav a:focus-visible {
 
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(14, 33, 30, 0.9), rgba(14, 33, 30, 0.56) 45%, rgba(14, 33, 30, 0.2)),
-    linear-gradient(0deg, rgba(14, 33, 30, 0.72), rgba(14, 33, 30, 0.08) 40%);
+    linear-gradient(90deg, rgba(6, 29, 63, 0.92), rgba(0, 87, 168, 0.62) 48%, rgba(6, 29, 63, 0.18)),
+    linear-gradient(0deg, rgba(6, 29, 63, 0.76), rgba(6, 29, 63, 0.08) 40%);
 }
 
 .hero-content {
@@ -196,14 +197,14 @@ h3 {
 }
 
 .button.primary {
-  color: var(--ink);
-  background: #f3c76e;
+  color: var(--eagle-blue-dark);
+  background: var(--white);
 }
 
 .button.secondary {
   color: var(--white);
-  border-color: rgba(255, 255, 255, 0.55);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.68);
+  background: rgba(232, 242, 255, 0.14);
 }
 
 .button.full {
@@ -249,7 +250,7 @@ h3 {
 }
 
 .why-section {
-  background: #edf2ed;
+  background: var(--sky);
 }
 
 .priorities-section {
@@ -283,12 +284,12 @@ h3 {
 
 .involved-section {
   color: var(--white);
-  background: var(--green-dark);
+  background: var(--eagle-blue-deep);
 }
 
 .involved-section .section-kicker,
 .involved-section p {
-  color: #dcebe6;
+  color: #dcecff;
 }
 
 .action-panel {
@@ -317,7 +318,7 @@ h3 {
 .action-panel li::before {
   position: absolute;
   left: 0;
-  color: var(--gold);
+  color: var(--eagle-blue);
   content: "•";
   font-weight: 900;
 }
@@ -328,8 +329,8 @@ h3 {
   justify-content: space-between;
   gap: 1rem;
   padding: 1.5rem clamp(1rem, 4vw, 3rem);
-  color: #dcebe6;
-  background: #0e211e;
+  color: #dcecff;
+  background: #061d3f;
 }
 
 .site-footer p {
@@ -338,7 +339,7 @@ h3 {
 
 .disclaimer {
   font-size: 0.86rem;
-  color: #b7c9c3;
+  color: #b7c9e2;
 }
 
 @media (max-width: 860px) {
