@@ -82,6 +82,7 @@ const voterInfo = [
 const trustItems = [
   'This campaign is independent and is not sponsored by Columbia CUSD 4.',
   'Any official district logo, mascot, or school property should be used only with permission.',
+  'Any campaign photo with students or children should be used only with parent/guardian permission.',
   '[Add official campaign committee name]',
   '[Add campaign treasurer name, if required]',
   '[Add required paid-for-by disclaimer]',
@@ -101,58 +102,79 @@ const votingLinks = [
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="Naureen Stack-Friedrick is running for re-election to the Columbia Community Unit School District 4 Board of Education in Columbia, IL. Learn why she is running and how to get involved."
+      content="Naureen Stack-Frierdich is running for re-election to the Columbia Community Unit School District 4 Board of Education in Columbia, IL with a campaign focused on students, schools, and community."
     />
-    <title>Re-elect Naureen Stack-Friedrick for Columbia School Board</title>
+    <title>Re-elect Naureen Stack-Frierdich for Columbia School Board</title>
     <style set:html={globalCss}></style>
   </head>
   <body>
     <header class="site-header" aria-label="Campaign header">
       <a class="brand" href="#top" aria-label="Naureen campaign home">
         <img class="brand-mark" src={`${import.meta.env.BASE_URL}images/naureen-eagles-campaign-mark.svg`} alt="" />
-        <span class="brand-name">Naureen Stack-Friedrick for Columbia School Board</span>
+        <span class="brand-name">Re-elect Naureen for Columbia School Board</span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#meet">Meet</a>
-        <a href="#why">Why</a>
+        <a href="#heart">Heart</a>
+        <a href="#gratitude">Gratitude</a>
         <a href="#priorities">Priorities</a>
         <a href="#record">Record</a>
         <a href="#support">Support</a>
         <a href="#vote">Vote</a>
-        <a href="#involved">Help</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title" style={`--hero-image: url("${import.meta.env.BASE_URL}images/school-board-room-hero.png")`}>
-        <div class="hero-image" aria-hidden="true"></div>
-        <div class="hero-overlay"></div>
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
-          <p class="eyebrow">Columbia, IL • CUSD 4 Board of Education</p>
-          <h1 id="hero-title">Re-elect Naureen Stack-Friedrick.</h1>
-          <p class="hero-copy">
-            A steady, thoughtful voice on the current school board, running again to keep Columbia Community Unit School District 4 focused on students, families, educators, and responsible decisions.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#involved">Get Involved</a>
-            <a class="button secondary" href="#why">Why I Am Running</a>
+          <div>
+            <p class="eyebrow">Columbia, IL • CUSD 4 Board of Education</p>
+            <h1 id="hero-title">Re-ELECT Naureen Stack-Frierdich</h1>
+            <p class="hero-slogan">
+              <span>Focused on the Future:</span>
+              <span>For our students.</span>
+              <span>For our schools.</span>
+              <span>For our community.</span>
+            </p>
+          </div>
+          <div class="hero-photo" aria-label="Photo of Naureen with students placeholder">
+            <div class="photo-placeholder">
+              <span>NSF</span>
+              <p>[Add picture of Naureen with kids]</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="intro-section">
+      <section class="intro-section" id="gratitude" aria-labelledby="gratitude-title">
         <div class="section-inner intro-grid">
           <div>
-            <p class="section-kicker">Re-election campaign</p>
-            <h2>Experienced service. Clear priorities. Respect for the community.</h2>
+            <p class="section-kicker">Focused on What Matters Most</p>
+            <h2 id="gratitude-title">Focused on Gratitude</h2>
           </div>
-          <p>
-            Naureen is a current school board member for Columbia Community Unit School District 4 and is running for re-election with a campaign built around facts, listening, and practical leadership. This campaign will stay focused on what matters most: strong schools, honest conversations, and decisions families can understand.
-          </p>
+          <div class="prose gratitude-copy">
+            <p>
+              For the past four years, I have been truly honored and grateful for the opportunity to serve our students, our schools, and our community.
+            </p>
+            <p>
+              This experience has been filled with meaningful conversations, important decisions, challenges, lessons, and countless reminders of how special our community is.
+            </p>
+            <p>
+              I’m grateful for the trust you placed in me four years ago, and for everyone who has taken the time to share their ideas, concerns, encouragement, and perspective along the way.
+            </p>
+            <p>
+              Serving on the school board has given me an even greater appreciation for the dedication of our teachers and staff, the support of our families, and the incredible potential of our students.
+            </p>
+            <p>
+              It has been a privilege to listen, learn, and be part of the work that helps shape our schools and our community. I don’t take that responsibility lightly, and I’m incredibly thankful for these four years of service.
+            </p>
+            <p>
+              As I look ahead, my gratitude for where we’ve been only strengthens my commitment to remain focused on the future: for our students, for our schools, and for our community.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section class="meet-section" id="meet" aria-labelledby="meet-title">
+      <section class="meet-section" id="heart" aria-labelledby="heart-title">
         <div class="section-inner candidate-grid">
           <div class="candidate-photo" aria-label="Candidate photo placeholder">
             <div class="photo-placeholder">
@@ -161,33 +183,13 @@ const votingLinks = [
             </div>
           </div>
           <div class="prose">
-            <p class="section-kicker">Meet Naureen</p>
-            <h2 id="meet-title">A Columbia voice with board experience.</h2>
+            <p class="section-kicker">The Heart Behind the Focus</p>
+            <h2 id="heart-title">The Heart Behind the Focus</h2>
             <p>
-              [Add Naureen's personal bio: family, years in Columbia, connection to Columbia schools, professional background, and community involvement.]
-            </p>
-            <p>
-              [Add a short paragraph in Naureen's voice about what serving on the board has taught her and why she wants to continue serving.]
+              [This will be Naureen's why. Add her personal story, her connection to Columbia schools, and the reason she feels called to continue serving.]
             </p>
             <p class="local-note">
               Columbia CUSD 4 serves Columbia High School, Columbia Middle School, Eagleview Elementary School, and Parkview Elementary School. This site should speak to the full PreK-12 school community, not just one campus.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="why-section" id="why" aria-labelledby="why-title">
-        <div class="section-inner two-column">
-          <div>
-            <p class="section-kicker">Why I am running</p>
-            <h2 id="why-title">I am running again because the work matters.</h2>
-          </div>
-          <div class="prose">
-            <p>
-              Serving on the school board is a responsibility I take seriously. Our schools shape the future of Columbia, IL, and every decision should be made with care, transparency, and respect for the people affected by it.
-            </p>
-            <p>
-              I am running again to continue bringing a practical, prepared, and community-minded voice to the board. I believe students should remain at the center, parents should be heard, educators should be supported, and taxpayer dollars should be handled responsibly.
             </p>
           </div>
         </div>
@@ -337,7 +339,7 @@ const votingLinks = [
     </main>
 
     <footer class="site-footer">
-      <p>Re-elect Naureen Stack-Friedrick for Columbia School Board</p>
+      <p>Re-elect Naureen Stack-Frierdich for Columbia School Board</p>
       <p class="disclaimer">Campaign disclaimer to be added before public launch.</p>
     </footer>
   </body>
