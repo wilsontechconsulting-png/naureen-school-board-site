@@ -1,6 +1,6 @@
-# Naureen for Columbia District School Board
+# Naureen for Columbia CUSD 4 Board of Education
 
-Astro campaign website starter for Naureen's school board campaign.
+Astro campaign website starter for Naureen Stack-Frierdich's Columbia, IL school board re-election campaign.
 
 ## Commands
 
