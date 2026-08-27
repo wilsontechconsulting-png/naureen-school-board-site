@@ -70,13 +70,11 @@ nav {
 }
 
 .brand-mark {
-  display: grid;
   width: 2rem;
   height: 2rem;
-  place-items: center;
-  color: var(--eagle-blue-dark);
-  background: var(--white);
+  flex: 0 0 auto;
   border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
 }
 
 nav {
