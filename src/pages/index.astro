@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import globalCss from '../styles/global.css?raw';
 
 const priorities = [
   {
@@ -104,6 +104,7 @@ const votingLinks = [
       content="Naureen Stack-Friedrick is running for re-election to the Columbia Community Unit School District 4 Board of Education in Columbia, IL. Learn why she is running and how to get involved."
     />
     <title>Re-elect Naureen Stack-Friedrick for Columbia School Board</title>
+    <style set:html={globalCss}></style>
   </head>
   <body>
     <header class="site-header" aria-label="Campaign header">
