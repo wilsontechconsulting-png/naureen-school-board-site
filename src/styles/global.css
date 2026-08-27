@@ -139,11 +139,11 @@ p {
 }
 
 h1 {
-  max-width: 9ch;
+  max-width: 13ch;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.75rem, 10vw, 8.25rem);
-  line-height: 0.92;
+  font-size: clamp(3.1rem, 8vw, 7.25rem);
+  line-height: 0.95;
   letter-spacing: 0;
 }
 
