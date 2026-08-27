@@ -79,6 +79,8 @@ nav {
 
 nav {
   gap: clamp(0.75rem, 2vw, 1.5rem);
+  flex-wrap: wrap;
+  justify-content: flex-end;
   font-size: 0.95rem;
   font-weight: 700;
 }
@@ -227,7 +229,9 @@ h3 {
 
 .intro-grid,
 .two-column,
-.involved-grid {
+.involved-grid,
+.vote-grid,
+.trust-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(2rem, 6vw, 5rem);
@@ -236,7 +240,8 @@ h3 {
 
 .intro-grid p,
 .prose p,
-.involved-grid p {
+.involved-grid p,
+.vote-grid p {
   margin: 0;
   color: var(--muted);
   font-size: 1.12rem;
@@ -251,8 +256,15 @@ h3 {
   background: var(--sky);
 }
 
+.meet-section,
 .priorities-section {
   background: var(--paper);
+}
+
+.record-section {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .section-heading {
@@ -278,6 +290,46 @@ h3 {
 .priority-item p {
   margin: 0;
   color: var(--muted);
+}
+
+.record-list,
+.vote-details,
+.trust-section ul {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.record-list p,
+.vote-row,
+.trust-section li {
+  margin: 0;
+  padding: 1rem;
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.vote-section {
+  background: var(--sky);
+}
+
+.vote-row {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.vote-row span {
+  color: var(--eagle-blue);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vote-row strong {
+  color: var(--ink);
+  font-size: 1rem;
 }
 
 .involved-section {
@@ -319,6 +371,16 @@ h3 {
   color: var(--eagle-blue);
   content: "•";
   font-weight: 900;
+}
+
+.trust-section {
+  background: var(--white);
+}
+
+.trust-section ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .site-footer {
@@ -371,6 +433,8 @@ h3 {
   .intro-grid,
   .two-column,
   .involved-grid,
+  .vote-grid,
+  .trust-grid,
   .priority-grid {
     grid-template-columns: 1fr;
   }

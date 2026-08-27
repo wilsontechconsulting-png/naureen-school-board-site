@@ -26,6 +26,26 @@ const involvement = [
   'Help with voter outreach',
   'Share campaign updates',
 ];
+
+const boardRecord = [
+  '[Add board service example #1: vote, initiative, committee work, or issue she helped move forward.]',
+  '[Add board service example #2: budget oversight, student support, facilities, curriculum, safety, or communication.]',
+  '[Add board service example #3: lesson learned or result from serving on the current board.]',
+];
+
+const voterInfo = [
+  { label: 'Election Day', value: '[Add election date]' },
+  { label: 'District', value: 'Columbia Community Unit School District 4, Columbia, IL' },
+  { label: 'How to Vote', value: '[Add polling place lookup, early voting, and vote-by-mail information]' },
+  { label: 'Who Can Vote', value: '[Add eligibility and district boundary notes]' },
+];
+
+const trustItems = [
+  'This campaign is independent and is not sponsored by Columbia CUSD 4.',
+  '[Add official campaign committee name]',
+  '[Add campaign treasurer name, if required]',
+  '[Add required paid-for-by disclaimer]',
+];
 ---
 
 <!doctype html>
@@ -46,9 +66,12 @@ const involvement = [
         <span class="brand-name">Naureen Stack-Friedrick for Columbia School Board</span>
       </a>
       <nav aria-label="Main navigation">
+        <a href="#meet">Meet</a>
         <a href="#why">Why</a>
         <a href="#priorities">Priorities</a>
-        <a href="#involved">Get Involved</a>
+        <a href="#record">Record</a>
+        <a href="#vote">Vote</a>
+        <a href="#involved">Help</a>
       </nav>
     </header>
 
@@ -78,6 +101,23 @@ const involvement = [
           <p>
             Naureen is a current school board member for Columbia Community Unit School District 4 and is running for re-election with a campaign built around facts, listening, and practical leadership. This campaign will stay focused on what matters most: strong schools, honest conversations, and decisions families can understand.
           </p>
+        </div>
+      </section>
+
+      <section class="meet-section" id="meet" aria-labelledby="meet-title">
+        <div class="section-inner two-column">
+          <div>
+            <p class="section-kicker">Meet Naureen</p>
+            <h2 id="meet-title">A Columbia voice with board experience.</h2>
+          </div>
+          <div class="prose">
+            <p>
+              [Add Naureen's personal bio: family, years in Columbia, connection to Columbia schools, professional background, and community involvement.]
+            </p>
+            <p>
+              [Add a short paragraph in Naureen's voice about what serving on the board has taught her and why she wants to continue serving.]
+            </p>
+          </div>
         </div>
       </section>
 
@@ -115,6 +155,38 @@ const involvement = [
         </div>
       </section>
 
+      <section class="record-section" id="record" aria-labelledby="record-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker">Board service</p>
+            <h2 id="record-title">What Naureen has worked on while serving.</h2>
+          </div>
+          <div class="record-list">
+            {boardRecord.map((item) => <p>{item}</p>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="vote-section" id="vote" aria-labelledby="vote-title">
+        <div class="section-inner vote-grid">
+          <div>
+            <p class="section-kicker">Voter information</p>
+            <h2 id="vote-title">Make a plan to vote for Columbia schools.</h2>
+            <p>
+              [Add the most current election information once filing and county election details are confirmed.]
+            </p>
+          </div>
+          <div class="vote-details">
+            {voterInfo.map((item) => (
+              <div class="vote-row">
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section class="involved-section" id="involved" aria-labelledby="involved-title">
         <div class="section-inner involved-grid">
           <div>
@@ -130,6 +202,18 @@ const involvement = [
             </ul>
             <a class="button primary full" href="mailto:campaign@example.com?subject=Naureen%20School%20Board%20Campaign">Contact the Campaign</a>
           </div>
+        </div>
+      </section>
+
+      <section class="trust-section" id="trust" aria-labelledby="trust-title">
+        <div class="section-inner trust-grid">
+          <div>
+            <p class="section-kicker">Trust and compliance</p>
+            <h2 id="trust-title">Clear campaign information before launch.</h2>
+          </div>
+          <ul>
+            {trustItems.map((item) => <li>{item}</li>)}
+          </ul>
         </div>
       </section>
     </main>
