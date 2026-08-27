@@ -20,31 +20,77 @@ const priorities = [
   },
 ];
 
-const involvement = [
-  'Host a conversation',
+const beliefs = [
+  {
+    title: 'Prepared Decisions',
+    text: 'School board decisions should be made with homework done, questions asked, and the long-term needs of Columbia students in mind.',
+  },
+  {
+    title: 'Open Communication',
+    text: 'Families and staff deserve clear explanations, respectful listening, and fewer surprises when decisions affect classrooms and students.',
+  },
+  {
+    title: 'Eagle Pride',
+    text: 'Columbia schools are part of the community identity. The campaign should reflect local pride while staying independent from the district.',
+  },
+];
+
+const actionOptions = [
   'Request a yard sign',
-  'Help with voter outreach',
-  'Share campaign updates',
+  'Volunteer for voter outreach',
+  'Host a meet-and-greet',
+  'Receive campaign updates',
 ];
 
 const boardRecord = [
-  '[Add board service example #1: vote, initiative, committee work, or issue she helped move forward.]',
-  '[Add board service example #2: budget oversight, student support, facilities, curriculum, safety, or communication.]',
-  '[Add board service example #3: lesson learned or result from serving on the current board.]',
+  {
+    title: 'Current Board Service',
+    text: '[Add Naureen\'s current board role, committees, appointed/elected service dates, and any board responsibilities.]',
+  },
+  {
+    title: 'Work Supported',
+    text: '[Add 3-5 specific items she supported or helped move forward, such as student programs, safety, curriculum, facilities, finance, or communication.]',
+  },
+  {
+    title: 'What She Has Learned',
+    text: '[Add a plain-English reflection from Naureen about what serving has taught her about Columbia CUSD 4 families, students, staff, and taxpayers.]',
+  },
+];
+
+const endorsements = [
+  {
+    quote: '[Add short endorsement quote from a Columbia parent, teacher, community member, or local leader.]',
+    name: '[Name, relationship to Columbia schools]',
+  },
+  {
+    quote: '[Add short endorsement quote focused on Naureen\'s preparation, listening, or service.]',
+    name: '[Name, relationship to Columbia schools]',
+  },
+  {
+    quote: '[Add short endorsement quote from someone who can speak to her character and community involvement.]',
+    name: '[Name, relationship to Columbia schools]',
+  },
 ];
 
 const voterInfo = [
-  { label: 'Election Day', value: '[Add election date]' },
+  { label: 'Election Day', value: 'April 6, 2027 consolidated election' },
   { label: 'District', value: 'Columbia Community Unit School District 4, Columbia, IL' },
-  { label: 'How to Vote', value: '[Add polling place lookup, early voting, and vote-by-mail information]' },
-  { label: 'Who Can Vote', value: '[Add eligibility and district boundary notes]' },
+  { label: 'Local Election Office', value: 'Monroe County Clerk, 618-939-8623 ext. 302' },
+  { label: 'Vote by Mail', value: 'Monroe County offers regular and permanent vote-by-mail options.' },
 ];
 
 const trustItems = [
   'This campaign is independent and is not sponsored by Columbia CUSD 4.',
+  'Any official district logo, mascot, or school property should be used only with permission.',
   '[Add official campaign committee name]',
   '[Add campaign treasurer name, if required]',
   '[Add required paid-for-by disclaimer]',
+];
+
+const votingLinks = [
+  { label: 'Monroe County Elections', href: 'https://www.mococlerk.com/elections.html' },
+  { label: 'Voter Lookup', href: 'https://www.mococlerk.com/elections.html' },
+  { label: 'Illinois School Board Election Info', href: 'https://www.iasb.com/memberships-and-divisions/school-board-elections' },
 ];
 ---
 
@@ -70,6 +116,7 @@ const trustItems = [
         <a href="#why">Why</a>
         <a href="#priorities">Priorities</a>
         <a href="#record">Record</a>
+        <a href="#support">Support</a>
         <a href="#vote">Vote</a>
         <a href="#involved">Help</a>
       </nav>
@@ -105,17 +152,24 @@ const trustItems = [
       </section>
 
       <section class="meet-section" id="meet" aria-labelledby="meet-title">
-        <div class="section-inner two-column">
-          <div>
-            <p class="section-kicker">Meet Naureen</p>
-            <h2 id="meet-title">A Columbia voice with board experience.</h2>
+        <div class="section-inner candidate-grid">
+          <div class="candidate-photo" aria-label="Candidate photo placeholder">
+            <div class="photo-placeholder">
+              <span>NSF</span>
+              <p>[Add Naureen's campaign photo]</p>
+            </div>
           </div>
           <div class="prose">
+            <p class="section-kicker">Meet Naureen</p>
+            <h2 id="meet-title">A Columbia voice with board experience.</h2>
             <p>
               [Add Naureen's personal bio: family, years in Columbia, connection to Columbia schools, professional background, and community involvement.]
             </p>
             <p>
               [Add a short paragraph in Naureen's voice about what serving on the board has taught her and why she wants to continue serving.]
+            </p>
+            <p class="local-note">
+              Columbia CUSD 4 serves Columbia High School, Columbia Middle School, Eagleview Elementary School, and Parkview Elementary School. This site should speak to the full PreK-12 school community, not just one campus.
             </p>
           </div>
         </div>
@@ -155,14 +209,56 @@ const trustItems = [
         </div>
       </section>
 
+      <section class="beliefs-section" id="beliefs" aria-labelledby="beliefs-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker">What I believe</p>
+            <h2 id="beliefs-title">A calm, clear approach to serving Columbia schools.</h2>
+          </div>
+          <div class="belief-grid">
+            {beliefs.map((belief) => (
+              <article class="belief-item">
+                <h3>{belief.title}</h3>
+                <p>{belief.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section class="record-section" id="record" aria-labelledby="record-title">
         <div class="section-inner">
           <div class="section-heading">
             <p class="section-kicker">Board service</p>
-            <h2 id="record-title">What Naureen has worked on while serving.</h2>
+            <h2 id="record-title">Board experience voters can understand.</h2>
           </div>
           <div class="record-list">
-            {boardRecord.map((item) => <p>{item}</p>)}
+            {boardRecord.map((item) => (
+              <article>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="support-section" id="support" aria-labelledby="support-title">
+        <div class="section-inner support-grid">
+          <div>
+            <p class="section-kicker">Community support</p>
+            <h2 id="support-title">Local voices matter in a school board campaign.</h2>
+            <p>
+              Endorsements should be short, specific, and rooted in Columbia. The strongest quotes will come from people who can speak honestly about Naureen's preparation, listening, judgment, and service.
+            </p>
+          </div>
+          <div class="endorsement-list">
+            {endorsements.map((endorsement) => (
+              <figure>
+                <blockquote>{endorsement.quote}</blockquote>
+                <figcaption>{endorsement.name}</figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
@@ -170,11 +266,16 @@ const trustItems = [
       <section class="vote-section" id="vote" aria-labelledby="vote-title">
         <div class="section-inner vote-grid">
           <div>
-            <p class="section-kicker">Voter information</p>
-            <h2 id="vote-title">Make a plan to vote for Columbia schools.</h2>
+            <p class="section-kicker">Election center</p>
+            <h2 id="vote-title">Make a plan for the 2027 school board election.</h2>
             <p>
-              [Add the most current election information once filing and county election details are confirmed.]
+              Illinois school board elections are nonpartisan and are held during consolidated elections. Voters should confirm registration, polling location, early voting, and vote-by-mail details with the Monroe County Clerk before Election Day.
             </p>
+            <div class="link-row">
+              {votingLinks.map((link) => (
+                <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+              ))}
+            </div>
           </div>
           <div class="vote-details">
             {voterInfo.map((item) => (
@@ -191,17 +292,33 @@ const trustItems = [
         <div class="section-inner involved-grid">
           <div>
             <p class="section-kicker">Get involved</p>
-            <h2 id="involved-title">Help keep experienced leadership on the board.</h2>
+            <h2 id="involved-title">Turn local support into practical campaign help.</h2>
             <p>
-              School board races are won through trust, relationships, and community conversations. Your support helps neighbors hear directly from Naureen and understand what is at stake for Columbia CUSD 4 schools.
+              A school board campaign needs neighbors who are willing to have respectful conversations, share accurate information, and help voters know when and where to participate.
             </p>
           </div>
-          <div class="action-panel">
-            <ul>
-              {involvement.map((item) => <li>{item}</li>)}
-            </ul>
-            <a class="button primary full" href="mailto:campaign@example.com?subject=Naureen%20School%20Board%20Campaign">Contact the Campaign</a>
-          </div>
+          <form class="action-panel campaign-form" action="mailto:campaign@example.com" method="post" enctype="text/plain">
+            <label>
+              Name
+              <input name="name" type="text" placeholder="[Your name]" />
+            </label>
+            <label>
+              Email or phone
+              <input name="contact" type="text" placeholder="[Best way to reach you]" />
+            </label>
+            <label>
+              I can help with
+              <select name="interest">
+                {actionOptions.map((item) => <option>{item}</option>)}
+              </select>
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="[Optional note]"></textarea>
+            </label>
+            <p class="form-note">Replace campaign@example.com with the official campaign email before launch.</p>
+            <button class="button primary full" type="submit">Send Campaign Note</button>
+          </form>
         </div>
       </section>
 

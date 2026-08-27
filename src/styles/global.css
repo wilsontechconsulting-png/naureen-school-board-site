@@ -231,7 +231,9 @@ h3 {
 .two-column,
 .involved-grid,
 .vote-grid,
-.trust-grid {
+.trust-grid,
+.candidate-grid,
+.support-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(2rem, 6vw, 5rem);
@@ -241,7 +243,12 @@ h3 {
 .intro-grid p,
 .prose p,
 .involved-grid p,
-.vote-grid p {
+.vote-grid p,
+.support-grid p,
+.belief-item p,
+.record-list p,
+.endorsement-list blockquote,
+.local-note {
   margin: 0;
   color: var(--muted);
   font-size: 1.12rem;
@@ -252,13 +259,76 @@ h3 {
   gap: 1rem;
 }
 
+.candidate-grid {
+  align-items: center;
+}
+
+.candidate-photo {
+  min-height: 27rem;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(0, 87, 168, 0.15), rgba(255, 255, 255, 0.88)),
+    var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.photo-placeholder {
+  display: grid;
+  min-height: 27rem;
+  place-content: center;
+  gap: 0.8rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.photo-placeholder span {
+  display: inline-grid;
+  width: 7rem;
+  height: 7rem;
+  place-items: center;
+  margin: 0 auto;
+  color: var(--white);
+  background: var(--eagle-blue);
+  border: 6px solid var(--white);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--line);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.photo-placeholder p,
+.form-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.local-note {
+  padding-left: 1rem;
+  border-left: 4px solid var(--eagle-blue);
+}
+
 .why-section {
   background: var(--sky);
 }
 
 .meet-section,
-.priorities-section {
+.priorities-section,
+.support-section {
   background: var(--paper);
+}
+
+.beliefs-section {
+  background: var(--eagle-blue-dark);
+  color: var(--white);
+}
+
+.beliefs-section .section-kicker,
+.beliefs-section p {
+  color: #dcecff;
 }
 
 .record-section {
@@ -279,7 +349,8 @@ h3 {
   border-left: 1px solid var(--line);
 }
 
-.priority-item {
+.priority-item,
+.belief-item {
   min-height: 15rem;
   padding: 1.25rem;
   background: var(--white);
@@ -292,15 +363,30 @@ h3 {
   color: var(--muted);
 }
 
+.belief-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.belief-item {
+  min-height: 14rem;
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+}
+
 .record-list,
 .vote-details,
+.endorsement-list,
 .trust-section ul {
   display: grid;
   gap: 0.85rem;
 }
 
-.record-list p,
+.record-list article,
 .vote-row,
+.endorsement-list figure,
 .trust-section li {
   margin: 0;
   padding: 1rem;
@@ -308,6 +394,39 @@ h3 {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
+}
+
+.record-list h3,
+.record-list p,
+.endorsement-list blockquote,
+.endorsement-list figcaption {
+  margin: 0;
+}
+
+.record-list article {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.record-list h3 {
+  color: var(--ink);
+}
+
+.endorsement-list figure {
+  display: grid;
+  gap: 0.75rem;
+  background: var(--white);
+}
+
+.endorsement-list blockquote {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.35;
+}
+
+.endorsement-list figcaption {
+  color: var(--eagle-blue);
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 .vote-section {
@@ -332,6 +451,27 @@ h3 {
   font-size: 1rem;
 }
 
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.4rem;
+}
+
+.link-row a {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  padding: 0.55rem 0.8rem;
+  color: var(--eagle-blue-dark);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .involved-section {
   color: var(--white);
   background: var(--eagle-blue-deep);
@@ -343,7 +483,8 @@ h3 {
 }
 
 .action-panel {
-  display: block;
+  display: grid;
+  gap: 0.9rem;
   padding: 1.25rem;
   color: var(--ink);
   background: var(--white);
@@ -371,6 +512,31 @@ h3 {
   color: var(--eagle-blue);
   content: "•";
   font-weight: 900;
+}
+
+.campaign-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.campaign-form input,
+.campaign-form select,
+.campaign-form textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.7rem 0.8rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font: inherit;
+}
+
+.campaign-form textarea {
+  resize: vertical;
 }
 
 .trust-section {
@@ -435,11 +601,15 @@ h3 {
   .involved-grid,
   .vote-grid,
   .trust-grid,
+  .candidate-grid,
+  .support-grid,
+  .belief-grid,
   .priority-grid {
     grid-template-columns: 1fr;
   }
 
-  .priority-item {
+  .priority-item,
+  .belief-item {
     min-height: auto;
   }
 }
