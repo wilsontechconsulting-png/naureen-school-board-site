@@ -1,0 +1,142 @@
+---
+import '../styles/global.css';
+
+const priorities = [
+  {
+    title: 'Students First',
+    text: 'Every decision should come back to whether it helps students learn, grow, and feel prepared for what comes next.',
+  },
+  {
+    title: 'Parents Heard',
+    text: 'Families deserve clear communication, practical answers, and a school board that listens before decisions are made.',
+  },
+  {
+    title: 'Teachers Supported',
+    text: 'Strong classrooms start with educators and staff who have the backing, respect, and resources to do the job well.',
+  },
+  {
+    title: 'Responsible Stewardship',
+    text: 'Taxpayer dollars should be handled carefully, with transparency and a focus on what directly benefits students.',
+  },
+];
+
+const involvement = [
+  'Host a conversation',
+  'Request a yard sign',
+  'Help with voter outreach',
+  'Share campaign updates',
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Naureen is running again for Columbia District School Board. Learn why she is running and how to get involved."
+    />
+    <title>Naureen for Columbia District School Board</title>
+  </head>
+  <body>
+    <header class="site-header" aria-label="Campaign header">
+      <a class="brand" href="#top" aria-label="Naureen campaign home">
+        <span class="brand-mark">N</span>
+        <span>Naureen</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#why">Why</a>
+        <a href="#priorities">Priorities</a>
+        <a href="#involved">Get Involved</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title" style={`--hero-image: url("${import.meta.env.BASE_URL}images/school-board-room-hero.png")`}>
+        <div class="hero-image" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Columbia District School Board</p>
+          <h1 id="hero-title">Naureen is running again.</h1>
+          <p class="hero-copy">
+            I am announcing my campaign for Columbia District School Board and asking neighbors to be part of the next step for our schools.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#involved">Get Involved</a>
+            <a class="button secondary" href="#why">Why I Am Running</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-section">
+        <div class="section-inner intro-grid">
+          <div>
+            <p class="section-kicker">Second campaign</p>
+            <h2>Experience from the first race. A stronger campaign this time.</h2>
+          </div>
+          <p>
+            This is Naureen's second time running for school board. The campaign will be built around real conversations, clear priorities, and a practical commitment to Columbia families, students, teachers, and taxpayers.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-section" id="why" aria-labelledby="why-title">
+        <div class="section-inner two-column">
+          <div>
+            <p class="section-kicker">Why I am running</p>
+            <h2 id="why-title">Our schools deserve steady, community-minded leadership.</h2>
+          </div>
+          <div class="prose">
+            <p>
+              I am running because our schools shape the future of every family in Columbia. A strong school board should listen carefully, ask direct questions, and make decisions that are honest, thoughtful, and focused on students.
+            </p>
+            <p>
+              My goal is to bring a practical voice to the board, one that respects parents, supports teachers, protects taxpayers, and keeps attention on what students need to succeed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="priorities-section" id="priorities" aria-labelledby="priorities-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker">Campaign priorities</p>
+            <h2 id="priorities-title">A clear starting point for the conversation.</h2>
+          </div>
+          <div class="priority-grid">
+            {priorities.map((priority) => (
+              <article class="priority-item">
+                <h3>{priority.title}</h3>
+                <p>{priority.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="involved-section" id="involved" aria-labelledby="involved-title">
+        <div class="section-inner involved-grid">
+          <div>
+            <p class="section-kicker">Get involved</p>
+            <h2 id="involved-title">Help build the campaign from the ground up.</h2>
+            <p>
+              A school board campaign is local by nature. Conversations, neighborhood support, and simple visibility can make a real difference.
+            </p>
+          </div>
+          <div class="action-panel">
+            <ul>
+              {involvement.map((item) => <li>{item}</li>)}
+            </ul>
+            <a class="button primary full" href="mailto:campaign@example.com?subject=Naureen%20School%20Board%20Campaign">Contact the Campaign</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Naureen for Columbia District School Board</p>
+      <p class="disclaimer">Campaign disclaimer to be added before public launch.</p>
+    </footer>
+  </body>
+</html>
