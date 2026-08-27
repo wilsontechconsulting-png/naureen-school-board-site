@@ -197,6 +197,7 @@ h3 {
 }
 
 .focus-card {
+  position: relative;
   display: grid;
   min-height: 7.25rem;
   align-content: space-between;
@@ -206,6 +207,18 @@ h3 {
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 8px;
   box-shadow: 0 18px 46px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.18);
 }
 
 .focus-card span {
@@ -438,11 +451,17 @@ h3 {
 
 .priority-item,
 .belief-item {
+  position: relative;
   min-height: 15rem;
   padding: 1.25rem;
   background: var(--white);
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
 }
 
 .priority-item p {
@@ -451,6 +470,7 @@ h3 {
 }
 
 .belief-grid {
+  counter-reset: belief-card;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
@@ -458,9 +478,56 @@ h3 {
 
 .belief-item {
   min-height: 14rem;
+  padding-top: 4.35rem;
   color: var(--ink);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 8px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.belief-item::before {
+  counter-increment: belief-card;
+  position: absolute;
+  top: 1.15rem;
+  left: 1.25rem;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  color: var(--white);
+  background: var(--eagle-blue);
+  border: 2px solid #cce4ff;
+  border-radius: 50%;
+  content: counter(belief-card, decimal-leading-zero);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.belief-item h3 {
+  color: var(--ink);
+}
+
+.belief-item p {
+  color: #33445d;
+}
+
+.belief-item:hover,
+.priority-item:hover,
+.record-list article:hover,
+.vote-row:hover,
+.endorsement-list figure:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 87, 168, 0.34);
+  box-shadow: 0 18px 42px rgba(16, 35, 63, 0.14);
+}
+
+.belief-item:hover {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #e8f2ff 100%);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.18);
 }
 
 .record-list,
@@ -481,6 +548,10 @@ h3 {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .record-list h3,
