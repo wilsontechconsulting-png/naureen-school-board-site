@@ -500,39 +500,9 @@ nav a:focus-visible {
   line-height: 1.08;
 }
 
-.priorities-section {
-  background: var(--warm);
-}
-
 .section-heading {
   max-width: 780px;
   margin-bottom: 2.35rem;
-}
-
-.priority-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid rgba(16, 35, 63, 0.18);
-}
-
-.priority-list article {
-  min-height: 9rem;
-  padding: 1.25rem 1.5rem 1.25rem 0;
-  border-bottom: 1px solid rgba(16, 35, 63, 0.18);
-}
-
-.priority-list article:nth-child(odd) {
-  margin-right: 1.5rem;
-}
-
-.priority-list article:nth-child(even) {
-  padding-left: 1.5rem;
-  border-left: 1px solid rgba(16, 35, 63, 0.18);
-}
-
-.priority-list p {
-  margin-top: 0.4rem;
-  color: var(--muted);
 }
 
 .community-section {
@@ -819,16 +789,8 @@ nav a:focus-visible {
   .questions-grid,
   .vote-grid,
   .trust-grid,
-  .focus-layout,
-  .priority-list {
+  .focus-layout {
     grid-template-columns: 1fr;
-  }
-
-  .priority-list article:nth-child(odd),
-  .priority-list article:nth-child(even) {
-    margin-right: 0;
-    padding-left: 0;
-    border-left: 0;
   }
 
   .community-gallery {

@@ -46,33 +46,6 @@ const experienceItems = [
   },
 ];
 
-const priorities = [
-  {
-    title: 'Student success and opportunity',
-    text: 'Keep learning, safety, growth, and future readiness at the center of board decisions.',
-  },
-  {
-    title: 'Safe, strong schools',
-    text: 'Support environments where students can learn, participate, and belong.',
-  },
-  {
-    title: 'Great educators and staff',
-    text: 'Respect, support, and retain the people who serve students every day.',
-  },
-  {
-    title: 'Responsible stewardship',
-    text: 'Approach budgets, facilities, and resources with transparency and long-term care.',
-  },
-  {
-    title: 'Open communication',
-    text: 'Listen respectfully, explain clearly, and keep the community informed while honoring confidentiality.',
-  },
-  {
-    title: 'Community partnership',
-    text: 'Work alongside families, educators, staff, students, and neighbors for the good of Columbia schools.',
-  },
-];
-
 const communityGallery = [
   {
     src: 'images/community-athlete-month.jpg',
@@ -147,7 +120,6 @@ const voteLinks = [
       <nav aria-label="Main navigation">
         <a href="#focus">FOCUS</a>
         <a href="#experience">EXPERIENCE</a>
-        <a href="#priorities">PRIORITIES</a>
         <a href="#community">COMMUNITY</a>
         <a href="#about">ABOUT</a>
         <a href="#vote">VOTE</a>
@@ -267,26 +239,6 @@ const voteLinks = [
           </div>
         </div>
         <p class="forward-statement">I am not focused only on where we’ve been. I’m focused on where we’re going.</p>
-      </section>
-
-      <section class="priorities-section" id="priorities" aria-labelledby="priorities-title">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="section-kicker">The next four years</p>
-            <h2 id="priorities-title">Priorities for the Work Ahead</h2>
-            <p>
-              The work ahead should stay clear, practical, and connected to the future of our students, schools, and community.
-            </p>
-          </div>
-          <div class="priority-list">
-            {priorities.map((priority) => (
-              <article>
-                <h3>{priority.title}</h3>
-                <p>{priority.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
       </section>
 
       <section class="community-section" id="community" aria-labelledby="community-title">
