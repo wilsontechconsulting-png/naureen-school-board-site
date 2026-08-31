@@ -295,13 +295,15 @@ nav a:focus-visible {
   position: relative;
   overflow: hidden;
   color: var(--white);
-  background: var(--blue-deep);
+  background:
+    linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-dark) 46%, var(--blue) 100%);
 }
 
 .focus-backdrop {
   position: absolute;
-  inset: 0;
-  opacity: 0.18;
+  inset: 0 auto 0 0;
+  width: min(47vw, 36rem);
+  opacity: 1;
 }
 
 .focus-backdrop img {
@@ -309,16 +311,16 @@ nav a:focus-visible {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: 70% center;
-  filter: grayscale(20%);
+  object-position: 46% center;
+  filter: saturate(0.92) contrast(0.96);
 }
 
 .focus-section::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(6, 29, 63, 0.98), rgba(0, 87, 184, 0.88)),
-    rgba(6, 29, 63, 0.9);
+    linear-gradient(90deg, rgba(0, 87, 184, 0.54) 0%, rgba(6, 29, 63, 0.78) 32%, rgba(6, 29, 63, 0.97) 62%, rgba(6, 29, 63, 0.92) 100%),
+    linear-gradient(0deg, rgba(6, 29, 63, 0.84), rgba(0, 87, 184, 0.16));
   content: "";
 }
 
@@ -326,7 +328,7 @@ nav a:focus-visible {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.24fr);
+  grid-template-columns: minmax(16rem, 0.62fr) minmax(0, 1.38fr);
   gap: clamp(2rem, 6vw, 5rem);
   align-items: center;
 }
@@ -344,6 +346,7 @@ nav a:focus-visible {
 .focus-intro h2 {
   font-size: clamp(4rem, 12vw, 10rem);
   line-height: 0.82;
+  text-shadow: 0 12px 42px rgba(0, 0, 0, 0.34);
 }
 
 .focus-acronym {
@@ -356,7 +359,7 @@ nav a:focus-visible {
   display: grid;
   grid-template-columns: 5rem minmax(0, 1fr);
   gap: 1.25rem;
-  padding: 1.1rem 0;
+  padding: 1.15rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 }
 
@@ -575,6 +578,14 @@ nav a:focus-visible {
   align-items: center;
 }
 
+.about-copy-only {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+}
+
+.about-copy-only .prose {
+  grid-column: 2;
+}
+
 .portrait-frame {
   overflow: hidden;
   border-radius: 8px;
@@ -790,6 +801,25 @@ nav a:focus-visible {
 
   .community-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .focus-backdrop {
+    inset: 0;
+    width: 100%;
+  }
+
+  .focus-backdrop img {
+    object-position: 48% top;
+  }
+
+  .focus-section::after {
+    background:
+      linear-gradient(0deg, rgba(6, 29, 63, 0.98) 0%, rgba(6, 29, 63, 0.9) 56%, rgba(0, 87, 184, 0.6) 100%),
+      rgba(6, 29, 63, 0.78);
+  }
+
+  .about-copy-only .prose {
+    grid-column: auto;
   }
 }
 
