@@ -1,97 +1,126 @@
 ---
 import globalCss from '../styles/global.css?raw';
 
+const base = import.meta.env.BASE_URL;
+
+const focusLetters = [
+  {
+    letter: 'F',
+    title: 'Future Focused',
+    text: "Preparing our students and schools for tomorrow's opportunities.",
+  },
+  {
+    letter: 'O',
+    title: 'Open Communication',
+    text: 'Creating transparency, listening to families and educators, and keeping our community informed while maintaining confidentiality.',
+  },
+  {
+    letter: 'C',
+    title: 'Community',
+    text: 'Working together with students, parents, teachers, staff, and community members.',
+  },
+  {
+    letter: 'U',
+    title: 'Understanding',
+    text: 'Taking the time to listen, ask questions, and understand different perspectives before making decisions.',
+  },
+  {
+    letter: 'S',
+    title: 'Student Centered',
+    text: 'Keeping the success, safety, growth, and well-being of our students at the heart of every decision.',
+  },
+];
+
+const experienceItems = [
+  {
+    title: 'Listen',
+    text: 'Good governance starts with listening to families, educators, staff, students, and community members who see the district from different angles.',
+  },
+  {
+    title: 'Learn',
+    text: 'Four years of service has deepened my understanding of both the opportunities and the challenges facing Columbia CUSD 4.',
+  },
+  {
+    title: 'Lead',
+    text: 'Leadership means doing the homework, asking good questions, and being willing to make difficult decisions when necessary.',
+  },
+];
+
+const progressItems = [
+  'Student programs, classroom support, and learning opportunities',
+  'Facilities, safety, and long-term district planning',
+  'Responsible financial decisions tied to district needs',
+  'Communication between the district, families, staff, and community',
+];
+
 const priorities = [
   {
-    title: 'Student Achievement',
-    text: 'Keep board decisions focused on measurable learning, strong fundamentals, and the support every student needs to move forward.',
+    title: 'Student success and opportunity',
+    text: 'Keep learning, safety, growth, and future readiness at the center of board decisions.',
   },
   {
-    title: 'Family Partnership',
-    text: 'Families deserve clear communication, respectful listening, and a board that treats parents as partners in student success.',
+    title: 'Safe, strong schools',
+    text: 'Support environments where students can learn, participate, and belong.',
   },
   {
-    title: 'Educator Support',
-    text: 'Strong schools require teachers and staff who are respected, supported, and equipped to serve students well.',
+    title: 'Great educators and staff',
+    text: 'Respect, support, and retain the people who serve students every day.',
   },
   {
-    title: 'Responsible Stewardship',
-    text: 'Budgets should be transparent, practical, and tied to the classroom outcomes Columbia, IL families expect.',
-  },
-];
-
-const beliefs = [
-  {
-    title: 'Prepared Decisions',
-    text: 'School board decisions should be made with homework done, questions asked, and the long-term needs of Columbia students in mind.',
+    title: 'Responsible stewardship',
+    text: 'Approach budgets, facilities, and resources with transparency and long-term care.',
   },
   {
-    title: 'Open Communication',
-    text: 'Families and staff deserve clear explanations, respectful listening, and fewer surprises when decisions affect classrooms and students.',
+    title: 'Open communication',
+    text: 'Listen respectfully, explain clearly, and keep the community informed while honoring confidentiality.',
   },
   {
-    title: 'Eagle Pride',
-    text: 'Columbia schools are part of the community identity. The campaign should reflect local pride while staying independent from the district.',
+    title: 'Community partnership',
+    text: 'Work alongside families, educators, staff, students, and neighbors for the good of Columbia schools.',
   },
 ];
 
-const actionOptions = [
-  'Request a yard sign',
-  'Volunteer for voter outreach',
-  'Host a meet-and-greet',
-  'Receive campaign updates',
+const communityMoments = [
+  'Student athletes',
+  'School activities',
+  'Teacher supply drives',
+  'Community events',
+  'Performances and fundraisers',
+  'Everyday Eagle support',
 ];
 
-const boardRecord = [
+const voices = [
   {
-    title: 'Current Board Service',
-    text: '[Add Naureen\'s current board role, committees, appointed/elected service dates, and any board responsibilities.]',
-  },
-  {
-    title: 'Work Supported',
-    text: '[Add 3-5 specific items she supported or helped move forward, such as student programs, safety, curriculum, facilities, finance, or communication.]',
-  },
-  {
-    title: 'What She Has Learned',
-    text: '[Add a plain-English reflection from Naureen about what serving has taught her about Columbia CUSD 4 families, students, staff, and taxpayers.]',
-  },
-];
-
-const endorsements = [
-  {
-    quote: '[Add short endorsement quote from a Columbia parent, teacher, community member, or local leader.]',
+    quote: '[Add short endorsement from a parent, educator, community member, or person who has worked alongside Noreen.]',
     name: '[Name, relationship to Columbia schools]',
   },
   {
-    quote: '[Add short endorsement quote focused on Naureen\'s preparation, listening, or service.]',
+    quote: '[Add a specific quote about preparation, listening, service, or community involvement.]',
     name: '[Name, relationship to Columbia schools]',
   },
   {
-    quote: '[Add short endorsement quote from someone who can speak to her character and community involvement.]',
+    quote: '[Add a character-focused quote that feels credible and grounded, not promotional.]',
     name: '[Name, relationship to Columbia schools]',
   },
 ];
 
-const voterInfo = [
-  { label: 'Election Day', value: 'April 6, 2027 consolidated election' },
-  { label: 'District', value: 'Columbia Community Unit School District 4, Columbia, IL' },
-  { label: 'Local Election Office', value: 'Monroe County Clerk, 618-939-8623 ext. 302' },
-  { label: 'Vote by Mail', value: 'Monroe County offers regular and permanent vote-by-mail options.' },
-];
-
-const trustItems = [
-  'This campaign is independent and is not sponsored by Columbia CUSD 4.',
-  'Any official district logo, mascot, or school property should be used only with permission.',
-  'Any campaign photo with students or children should be used only with parent/guardian permission.',
-  '[Add official campaign committee name]',
-  '[Add campaign treasurer name, if required]',
-  '[Add required paid-for-by disclaimer]',
-];
-
-const votingLinks = [
-  { label: 'Monroe County Elections', href: 'https://www.mococlerk.com/elections.html' },
-  { label: 'Voter Lookup', href: 'https://www.mococlerk.com/elections.html' },
-  { label: 'Illinois School Board Election Info', href: 'https://www.iasb.com/memberships-and-divisions/school-board-elections' },
+const voteLinks = [
+  {
+    label: 'Voter registration',
+    href: 'https://ova.elections.il.gov/',
+  },
+  {
+    label: 'Polling place lookup',
+    href: 'https://ova.elections.il.gov/pollingplacelookup.aspx',
+  },
+  {
+    label: 'Monroe County elections',
+    href: 'https://www.mococlerk.com/elections.html',
+  },
+  {
+    label: 'Illinois State Board of Elections',
+    href: 'https://www.elections.il.gov/',
+  },
 ];
 ---
 
@@ -102,173 +131,100 @@ const votingLinks = [
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="Naureen Stack-Frierdich is running for re-election to the Columbia Community Unit School District 4 Board of Education in Columbia, IL with a campaign focused on students, schools, and community."
+      content="Re-elect Noreen Stack for Columbia CUSD 4 School Board. Focused on the future for our students, our schools, and our community."
     />
-    <title>Re-elect Naureen Stack-Frierdich for Columbia School Board</title>
+    <title>Re-elect Noreen Stack for Columbia CUSD 4 School Board</title>
     <style set:html={globalCss}></style>
   </head>
   <body>
     <header class="site-header" aria-label="Campaign header">
-      <a class="brand" href="#top" aria-label="Naureen campaign home">
-        <img class="brand-mark" src={`${import.meta.env.BASE_URL}images/columbia-eagles-logo.png`} alt="" />
-        <span class="brand-name">Re-elect Naureen for Columbia School Board</span>
+      <a class="brand" href="#top" aria-label="Noreen Stack campaign home">
+        <span class="brand-name">Noreen Stack</span>
+        <span class="brand-subtitle">Columbia CUSD 4 School Board</span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#heart">Heart</a>
-        <a href="#gratitude">Gratitude</a>
-        <a href="#priorities">Priorities</a>
-        <a href="#record">Record</a>
-        <a href="#support">Support</a>
-        <a href="#vote">Vote</a>
+        <a href="#focus">FOCUS</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#priorities">PRIORITIES</a>
+        <a href="#community">COMMUNITY</a>
+        <a href="#about">ABOUT</a>
+        <a href="#vote">VOTE</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <img
-          class="hero-watermark"
-          src={`${import.meta.env.BASE_URL}images/columbia-eagles-logo.png`}
-          alt=""
-          aria-hidden="true"
-        />
+        <div class="hero-photo" aria-hidden="true">
+          <img src={`${base}images/naureen-with-kids.jpg`} alt="" />
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
+          <p class="eyebrow">Columbia Community Unit School District 4</p>
+          <h1 id="hero-title">Re-Elect Noreen Stack</h1>
+          <p class="hero-office">Columbia CUSD 4 School Board</p>
+          <p class="hero-theme">Focused on the future for our students, for our schools, for our community.</p>
+          <div class="hero-actions" aria-label="Primary campaign links">
+            <a class="button primary" href="#why">Why I’m Running</a>
+            <a class="button secondary" href="#focus">FOCUS</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="future-section" id="future" aria-labelledby="future-title">
+        <div class="section-inner future-grid">
           <div>
-            <p class="eyebrow">Columbia, IL • CUSD 4 Board of Education</p>
-            <h1 id="hero-title">Re-ELECT Naureen Stack-Frierdich</h1>
-            <div class="hero-slogan" aria-label="Campaign slogan">
-              <p>Focused on the Future.</p>
-            </div>
+            <p class="section-kicker">Campaign theme</p>
+            <h2 id="future-title">Focused on the Future</h2>
           </div>
-          <div class="hero-photo">
-            <img
-              src={`${import.meta.env.BASE_URL}images/naureen-with-kids.jpg`}
-              alt="Naureen Stack-Frierdich with her children"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="focus-bridge" aria-labelledby="focus-bridge-title">
-        <div class="focus-bridge-inner">
-          <div class="focus-bridge-heading">
-            <div>
-              <p class="section-kicker">Focused on the Future</p>
-              <p class="focus-bridge-copy">A simple, steady focus for the work ahead in Columbia schools.</p>
-            </div>
-            <h2 id="focus-bridge-title">Students at the center. Schools supported. Community heard.</h2>
-          </div>
-          <div class="focus-cards" aria-label="Campaign focus areas">
-            <article class="focus-card">
-              <span>Students</span>
-              <strong>Every learner considered.</strong>
-              <p>Board decisions should keep student learning, safety, opportunity, and well-being at the center.</p>
-            </article>
-            <article class="focus-card">
-              <span>Schools</span>
-              <strong>Strong schools need steady support.</strong>
-              <p>Columbia classrooms, activities, teachers, and staff deserve thoughtful decisions and practical resources.</p>
-            </article>
-            <article class="focus-card">
-              <span>Community</span>
-              <strong>Local voices should be heard.</strong>
-              <p>Families, staff, and neighbors should know they are listened to as the district plans for the future.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="intro-section" id="gratitude" aria-labelledby="gratitude-title">
-        <div class="section-inner intro-grid">
-          <div>
-            <p class="section-kicker">Focused on What Matters Most</p>
-            <h2 id="gratitude-title">Focused on Gratitude</h2>
-          </div>
-          <div class="prose gratitude-copy">
+          <div class="future-copy">
+            <p class="future-line">For our students. For our schools. For our community.</p>
             <p>
-              For the past four years, I have been truly honored and grateful for the opportunity to serve our students, our schools, and our community.
-            </p>
-            <p>
-              This experience has been filled with meaningful conversations, important decisions, challenges, lessons, and countless reminders of how special our community is.
-            </p>
-            <p>
-              I’m grateful for the trust you placed in me four years ago, and for everyone who has taken the time to share their ideas, concerns, encouragement, and perspective along the way.
-            </p>
-            <p>
-              Serving on the school board has given me an even greater appreciation for the dedication of our teachers and staff, the support of our families, and the incredible potential of our students.
-            </p>
-            <p>
-              It has been a privilege to listen, learn, and be part of the work that helps shape our schools and our community. I don’t take that responsibility lightly, and I’m incredibly thankful for these four years of service.
-            </p>
-            <p>
-              As I look ahead, my gratitude for where we’ve been only strengthens my commitment to remain focused on the future: for our students, for our schools, and for our community.
+              School board service requires looking beyond the decision directly in front of us and considering where those decisions take our students, schools, and community in the years ahead.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="meet-section" id="heart" aria-labelledby="heart-title">
-        <div class="section-inner candidate-grid">
-          <div class="candidate-photo">
-            <img
-              src={`${import.meta.env.BASE_URL}images/naureen-heart-focus.jpg`}
-              alt="Naureen Stack-Frierdich wearing a Columbia Eagles shirt"
-            />
-          </div>
-          <div class="prose">
-            <p class="section-kicker">The Heart Behind the Focus</p>
-            <h2 id="heart-title">The Heart Behind the Focus</h2>
-            <p>
-              [This will be Naureen's why. Add her personal story, her connection to Columbia schools, and the reason she feels called to continue serving.]
-            </p>
-            <p class="local-note">
-              Columbia CUSD 4 serves Columbia High School, Columbia Middle School, Eagleview Elementary School, and Parkview Elementary School. This site should speak to the full PreK-12 school community, not just one campus.
-            </p>
-          </div>
+      <section class="focus-section" id="focus" aria-labelledby="focus-title">
+        <div class="focus-backdrop">
+          <img src={`${base}images/naureen-heart-focus.jpg`} alt="" />
         </div>
-      </section>
-
-      <section class="priorities-section" id="priorities" aria-labelledby="priorities-title">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="section-kicker">Campaign priorities</p>
-            <h2 id="priorities-title">A clean, educated campaign starts with substance.</h2>
+        <div class="section-inner focus-layout">
+          <div class="focus-intro">
+            <p class="section-kicker">A steady approach</p>
+            <h2 id="focus-title">FOCUS</h2>
+            <p>
+              A simple word for a serious responsibility: keeping every conversation, every question, and every decision connected to the future of Columbia CUSD 4.
+            </p>
           </div>
-          <div class="priority-grid">
-            {priorities.map((priority) => (
-              <article class="priority-item">
-                <h3>{priority.title}</h3>
-                <p>{priority.text}</p>
+          <div class="focus-acronym" aria-label="FOCUS acronym">
+            {focusLetters.map((item) => (
+              <article>
+                <span>{item.letter}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section class="beliefs-section" id="beliefs" aria-labelledby="beliefs-title">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="section-kicker">What I believe</p>
-            <h2 id="beliefs-title">A calm, clear approach to serving Columbia schools.</h2>
-          </div>
-          <div class="belief-grid">
-            {beliefs.map((belief) => (
-              <article class="belief-item">
-                <h3>{belief.title}</h3>
-                <p>{belief.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section class="record-section" id="record" aria-labelledby="record-title">
-        <div class="section-inner">
-          <div class="section-heading">
+      <section class="experience-section" id="experience" aria-labelledby="experience-title">
+        <div class="section-inner experience-grid">
+          <div class="experience-copy">
             <p class="section-kicker">Board service</p>
-            <h2 id="record-title">Board experience voters can understand.</h2>
+            <h2 id="experience-title">Four Years of Listening, Learning, Serving</h2>
+            <p>
+              Four years of school board service has given me a deeper understanding of both the opportunities and challenges facing our district.
+            </p>
+            <p>
+              Good governance is not about having all of the answers. It is about doing the homework, asking good questions, listening to different perspectives, and making difficult decisions when necessary.
+            </p>
           </div>
-          <div class="record-list">
-            {boardRecord.map((item) => (
+          <div class="experience-list">
+            {experienceItems.map((item) => (
               <article>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
@@ -278,22 +234,166 @@ const votingLinks = [
         </div>
       </section>
 
-      <section class="support-section" id="support" aria-labelledby="support-title">
-        <div class="section-inner support-grid">
+      <section class="progress-section" id="progress" aria-labelledby="progress-title">
+        <div class="quote-band">
+          <blockquote>
+            “The way I see it, if you want the rainbow, you got to put up with the rain.”
+          </blockquote>
+          <cite>Dolly Parton</cite>
+        </div>
+        <div class="section-inner progress-grid">
           <div>
-            <p class="section-kicker">Community support</p>
-            <h2 id="support-title">Local voices matter in a school board campaign.</h2>
+            <p class="section-kicker">Progress and the work ahead</p>
+            <h2 id="progress-title">Progress doesn’t happen without challenges.</h2>
             <p>
-              Endorsements should be short, specific, and rooted in Columbia. The strongest quotes will come from people who can speak honestly about Naureen's preparation, listening, judgment, and service.
+              Serving on a school board means making difficult decisions, listening to different perspectives, and staying focused on what matters most even when the path is not easy.
             </p>
           </div>
-          <div class="endorsement-list">
-            {endorsements.map((endorsement) => (
-              <figure>
-                <blockquote>{endorsement.quote}</blockquote>
-                <figcaption>{endorsement.name}</figcaption>
+          <div class="progress-panel">
+            <h3>Progress I’ve Been Proud to Support</h3>
+            <p>
+              The specific district accomplishments can be added here. This section should recognize that progress is the result of our board, administration, educators, staff, faculty, students, families, and community working together.
+            </p>
+            <ul>
+              {progressItems.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+        <p class="forward-statement">I am not focused on where we’ve been. I’m focused on where we’re going.</p>
+      </section>
+
+      <section class="priorities-section" id="priorities" aria-labelledby="priorities-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker">The next four years</p>
+            <h2 id="priorities-title">Priorities for the Work Ahead</h2>
+            <p>
+              The work ahead should stay clear, practical, and connected to the future of our students, schools, and community.
+            </p>
+          </div>
+          <div class="priority-list">
+            {priorities.map((priority) => (
+              <article>
+                <h3>{priority.title}</h3>
+                <p>{priority.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="community-section" id="community" aria-labelledby="community-title">
+        <div class="section-inner community-grid">
+          <div class="community-copy">
+            <p class="section-kicker">Showing up</p>
+            <h2 id="community-title">Rooted in Our Community</h2>
+            <p>
+              Supporting our schools does not begin or end at the board table. It happens in classrooms, on fields and courts, at performances, fundraisers, community events, and in everyday moments when we show up for one another.
+            </p>
+          </div>
+          <div class="photo-mosaic" aria-label="Community photo placeholders">
+            <figure class="mosaic-main">
+              <img src={`${base}images/naureen-with-kids.jpg`} alt="Noreen Stack with her children" />
+            </figure>
+            {communityMoments.map((moment) => (
+              <figure class="mosaic-placeholder">
+                <span>{moment}</span>
               </figure>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="gratitude-section" id="gratitude" aria-labelledby="gratitude-title">
+        <div class="section-inner gratitude-grid">
+          <div>
+            <p class="section-kicker">Thank you</p>
+            <h2 id="gratitude-title">Grateful for the Opportunity to Serve</h2>
+          </div>
+          <div class="prose">
+            <p>
+              I am grateful for the trust this community placed in me four years ago. Serving our students, schools, and community has been an honor, and I do not take that responsibility lightly.
+            </p>
+            <p>
+              These four years have included meaningful conversations, important decisions, challenges, lessons, and countless reminders of how special Columbia is. I am thankful for everyone who has shared ideas, concerns, encouragement, and perspective along the way.
+            </p>
+            <p>
+              That gratitude strengthens my commitment to remain focused on the future: for our students, for our schools, and for our community.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="section-inner about-grid">
+          <div class="portrait-frame">
+            <img src={`${base}images/naureen-heart-focus.jpg`} alt="Noreen Stack wearing a Columbia Eagles shirt" />
+          </div>
+          <div class="prose">
+            <p class="section-kicker">The person behind the campaign</p>
+            <h2 id="about-title">A Little About Me</h2>
+            <p>
+              [Add Noreen’s connection to Columbia, her family and children, professional background, education, community involvement, and why she originally chose to serve on the school board.]
+            </p>
+            <p>
+              This section should feel personal and grounded, not like a resume. It should help visitors understand the person behind the campaign and the community connection behind the service.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="why-section" id="why" aria-labelledby="why-title">
+        <div class="section-inner why-grid">
+          <div>
+            <p class="section-kicker">Why I’m running again</p>
+            <h2 id="why-title">Why Another Four Years?</h2>
+          </div>
+          <div class="prose">
+            <p>
+              Four years ago, I ran because I cared deeply about our schools and believed I could contribute something meaningful.
+            </p>
+            <p>
+              Today, I am running with something I did not have then: four years of experience, perspective, lessons learned, difficult conversations, hard decisions, and an even greater appreciation for the responsibility that comes with serving.
+            </p>
+            <p>
+              I believe there is more work to do, and I am asking the community for the opportunity to continue serving with focus, humility, and a steady commitment to our students, our schools, and our community.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="voices-section" id="voices" aria-labelledby="voices-title">
+        <div class="section-inner voices-grid">
+          <div>
+            <p class="section-kicker">Community voices</p>
+            <h2 id="voices-title">Shared Experiences and Perspectives</h2>
+            <p>
+              This section will give parents, educators, community members, and people who have worked alongside me a place to share their experiences in their own words.
+            </p>
+          </div>
+          <div class="voice-list">
+            {voices.map((voice) => (
+              <figure>
+                <blockquote>{voice.quote}</blockquote>
+                <figcaption>{voice.name}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="questions-section" id="questions" aria-labelledby="questions-title">
+        <div class="section-inner questions-grid">
+          <div>
+            <p class="section-kicker">Open communication</p>
+            <h2 id="questions-title">Questions? Let’s Talk.</h2>
+          </div>
+          <div class="conversation-panel">
+            <p>
+              Respectful questions, conversations, and different perspectives are welcome, even when we do not agree. Open communication is part of how a community stays connected to its schools.
+            </p>
+            <a class="button primary" href="mailto:campaign@example.com">Email the campaign</a>
+            <p class="small-note">Replace campaign@example.com with the official campaign email before launch.</p>
           </div>
         </div>
       </section>
@@ -301,78 +401,52 @@ const votingLinks = [
       <section class="vote-section" id="vote" aria-labelledby="vote-title">
         <div class="section-inner vote-grid">
           <div>
-            <p class="section-kicker">Election center</p>
-            <h2 id="vote-title">Make a plan for the 2027 school board election.</h2>
+            <p class="section-kicker">Election information</p>
+            <h2 id="vote-title">Make a Plan to Vote</h2>
             <p>
-              Illinois school board elections are nonpartisan and are held during consolidated elections. Voters should confirm registration, polling location, early voting, and vote-by-mail details with the Monroe County Clerk before Election Day.
+              Election details can change, so voters should confirm registration, early voting, polling place, vote-by-mail, and Election Day information with the Monroe County Clerk or the Illinois State Board of Elections.
             </p>
             <div class="link-row">
-              {votingLinks.map((link) => (
+              {voteLinks.map((link) => (
                 <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
               ))}
             </div>
           </div>
-          <div class="vote-details">
-            {voterInfo.map((item) => (
-              <div class="vote-row">
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-              </div>
-            ))}
+          <div class="vote-details" aria-label="Election details">
+            <div>
+              <span>Election date</span>
+              <strong>April 6, 2027</strong>
+            </div>
+            <div>
+              <span>District</span>
+              <strong>Columbia Community Unit School District 4</strong>
+            </div>
+            <div>
+              <span>Local election office</span>
+              <strong>Monroe County Clerk</strong>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="involved-section" id="involved" aria-labelledby="involved-title">
-        <div class="section-inner involved-grid">
-          <div>
-            <p class="section-kicker">Get involved</p>
-            <h2 id="involved-title">Turn local support into practical campaign help.</h2>
-            <p>
-              A school board campaign needs neighbors who are willing to have respectful conversations, share accurate information, and help voters know when and where to participate.
-            </p>
-          </div>
-          <form class="action-panel campaign-form" action="mailto:campaign@example.com" method="post" enctype="text/plain">
-            <label>
-              Name
-              <input name="name" type="text" placeholder="[Your name]" />
-            </label>
-            <label>
-              Email or phone
-              <input name="contact" type="text" placeholder="[Best way to reach you]" />
-            </label>
-            <label>
-              I can help with
-              <select name="interest">
-                {actionOptions.map((item) => <option>{item}</option>)}
-              </select>
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows="4" placeholder="[Optional note]"></textarea>
-            </label>
-            <p class="form-note">Replace campaign@example.com with the official campaign email before launch.</p>
-            <button class="button primary full" type="submit">Send Campaign Note</button>
-          </form>
-        </div>
-      </section>
-
-      <section class="trust-section" id="trust" aria-labelledby="trust-title">
+      <section class="trust-section" aria-labelledby="trust-title">
         <div class="section-inner trust-grid">
           <div>
-            <p class="section-kicker">Trust and compliance</p>
-            <h2 id="trust-title">Clear campaign information before launch.</h2>
+            <p class="section-kicker">Campaign information</p>
+            <h2 id="trust-title">Before Public Launch</h2>
           </div>
           <ul>
-            {trustItems.map((item) => <li>{item}</li>)}
+            <li>This campaign is independent and is not sponsored by Columbia CUSD 4.</li>
+            <li>Use official district logos, mascots, school property, and photos of students only with proper permission.</li>
+            <li>[Add official campaign committee name, treasurer name if required, and final paid-for-by disclaimer.]</li>
           </ul>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Re-elect Naureen Stack-Frierdich for Columbia School Board</p>
-      <p class="disclaimer">Campaign disclaimer to be added before public launch.</p>
+      <p>Re-elect Noreen Stack for Columbia CUSD 4 School Board</p>
+      <p class="disclaimer">Paid for by [Campaign Committee Name].</p>
     </footer>
   </body>
 </html>
