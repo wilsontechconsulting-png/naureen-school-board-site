@@ -400,6 +400,10 @@ nav a:focus-visible {
   font-size: 1.12rem;
 }
 
+.experience-copy strong {
+  color: var(--blue-deep);
+}
+
 .experience-list {
   display: grid;
   gap: 1.25rem;
