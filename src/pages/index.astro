@@ -73,13 +73,22 @@ const priorities = [
   },
 ];
 
-const communityMoments = [
-  'Student athletes',
-  'School activities',
-  'Teacher supply drives',
-  'Community events',
-  'Performances and fundraisers',
-  'Everyday Eagle support',
+const communityGallery = [
+  {
+    src: 'images/community-athlete-month.jpg',
+    alt: 'Athletes of the Month graphic with Columbia students and local sponsors',
+    caption: 'Celebrating our students through Athlete of the Month.',
+  },
+  {
+    src: 'images/community-wear-blue.jpg',
+    alt: 'Columbia students holding an On Fridays We Wear Blue school spirit sign',
+    caption: 'Showing up for school spirit, athletics, and activities.',
+  },
+  {
+    src: 'images/community-educator-support.jpg',
+    alt: 'Columbia school supporters standing beside student eagle artwork',
+    caption: 'Supporting educators, appreciation events, and school support.',
+  },
 ];
 
 const voices = [
@@ -281,7 +290,7 @@ const voteLinks = [
       </section>
 
       <section class="community-section" id="community" aria-labelledby="community-title">
-        <div class="section-inner community-grid">
+        <div class="section-inner community-layout">
           <div class="community-copy">
             <p class="section-kicker">Showing up</p>
             <h2 id="community-title">Rooted in Our Community</h2>
@@ -294,20 +303,20 @@ const voteLinks = [
             <p>
               Outside of board service, I have tried to find meaningful ways to give back to the community I call home, from bringing back the Athlete of the Month program and hosting teacher appreciation events to attending sports and extracurricular activities, supporting local businesses, and through my work in real estate, helping families put down roots in the communities I serve.
             </p>
-            <p>
-              For me, serving Columbia has never been limited to a seat at the board table. It is about showing up, supporting others, and investing in the community we are all working together to strengthen.
-            </p>
           </div>
-          <div class="photo-mosaic" aria-label="Community photo placeholders">
-            <figure class="mosaic-main">
-              <img src={`${base}images/naureen-with-kids.jpg`} alt="Naureen Stack with her children" />
-            </figure>
-            {communityMoments.map((moment) => (
-              <figure class="mosaic-placeholder">
-                <span>{moment}</span>
+
+          <div class="community-gallery" aria-label="Examples of Columbia school and community involvement">
+            {communityGallery.map((image) => (
+              <figure class="community-photo">
+                <img src={`${base}${image.src}`} alt={image.alt} loading="lazy" />
+                <figcaption>{image.caption}</figcaption>
               </figure>
             ))}
           </div>
+
+          <p class="community-takeaway">
+            For me, serving Columbia has never been limited to a seat at the board table. It is about showing up, supporting others, and investing in the community we are all working together to strengthen.
+          </p>
         </div>
       </section>
 
