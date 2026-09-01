@@ -316,6 +316,7 @@ nav a:focus-visible {
 
 .focus-section {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   color: var(--white);
   background:
@@ -334,7 +335,7 @@ nav a:focus-visible {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: 16% center;
+  object-position: 18% center;
   filter: saturate(1.02) contrast(1.02);
 }
 
@@ -342,8 +343,8 @@ nav a:focus-visible {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 87, 184, 0.14) 0%, rgba(6, 29, 63, 0.34) 30%, rgba(6, 29, 63, 0.88) 58%, rgba(6, 29, 63, 0.94) 100%),
-    linear-gradient(0deg, rgba(6, 29, 63, 0.48), rgba(0, 87, 184, 0.1));
+    linear-gradient(90deg, rgba(0, 87, 184, 0.08) 0%, rgba(6, 29, 63, 0.28) 34%, rgba(6, 29, 63, 0.82) 56%, rgba(6, 29, 63, 0.96) 100%),
+    linear-gradient(0deg, rgba(6, 29, 63, 0.46), rgba(0, 87, 184, 0.06));
   content: "";
 }
 
@@ -351,14 +352,21 @@ nav a:focus-visible {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(16rem, 0.62fr) minmax(0, 1.38fr);
-  gap: clamp(2rem, 6vw, 5rem);
+  grid-template-columns: minmax(18rem, 0.74fr) minmax(0, 1.26fr);
+  gap: clamp(2.5rem, 7vw, 6rem);
   align-items: center;
 }
 
 .focus-intro {
   display: grid;
-  gap: 1.1rem;
+  max-width: 32rem;
+  gap: 1rem;
+  padding: clamp(1.2rem, 2.8vw, 2rem);
+  background: rgba(6, 29, 63, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(6, 29, 63, 0.28);
+  backdrop-filter: blur(4px);
 }
 
 .focus-intro .section-kicker,
@@ -367,31 +375,45 @@ nav a:focus-visible {
 }
 
 .focus-intro h2 {
-  font-size: clamp(4rem, 12vw, 10rem);
-  line-height: 0.82;
-  text-shadow: 0 12px 42px rgba(0, 0, 0, 0.34);
+  font-size: clamp(4rem, 8vw, 7.2rem);
+  line-height: 0.9;
+  text-shadow: 0 14px 38px rgba(0, 0, 0, 0.34);
 }
 
 .focus-acronym {
   display: grid;
   gap: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  padding: clamp(1rem, 2.5vw, 1.55rem);
+  background: rgba(6, 29, 63, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(6, 29, 63, 0.34);
+  backdrop-filter: blur(5px);
 }
 
 .focus-acronym article {
   display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr);
+  grid-template-columns: 3.7rem minmax(0, 1fr);
   gap: 1.25rem;
-  padding: 1.15rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.focus-acronym article:first-child {
+  padding-top: 0;
+}
+
+.focus-acronym article:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .focus-acronym span {
   color: var(--white);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.8rem, 4.8vw, 4.3rem);
   font-weight: 800;
-  line-height: 0.86;
+  line-height: 0.9;
 }
 
 .focus-acronym h3 {
