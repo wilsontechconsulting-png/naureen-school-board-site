@@ -117,7 +117,13 @@ const voteLinks = [
         <span class="brand-name">Naureen Stack-Frierdich</span>
         <span class="brand-subtitle">Columbia CUSD 4 School Board</span>
       </a>
-      <nav aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+        <span class="visually-hidden">Open navigation menu</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" aria-label="Main navigation">
         <a href="#focus">FOCUS</a>
         <a href="#experience">EXPERIENCE</a>
         <a href="#community">COMMUNITY</a>
@@ -418,5 +424,34 @@ const voteLinks = [
       <p>Re-elect Naureen Stack-Frierdich for Columbia CUSD 4 School Board</p>
       <p class="disclaimer">Paid for by [Campaign Committee Name].</p>
     </footer>
+    <script>
+      const header = document.querySelector('.site-header');
+      const menuButton = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('#site-nav');
+
+      if (header && menuButton && nav) {
+        const closeMenu = () => {
+          header.classList.remove('menu-open');
+          menuButton.setAttribute('aria-expanded', 'false');
+        };
+
+        menuButton.addEventListener('click', () => {
+          const isOpen = header.classList.toggle('menu-open');
+          menuButton.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        nav.addEventListener('click', (event) => {
+          if (event.target instanceof HTMLAnchorElement) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            closeMenu();
+          }
+        });
+      }
+    </script>
   </body>
 </html>

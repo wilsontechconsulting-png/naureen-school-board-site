@@ -44,7 +44,7 @@ h1,
 h2,
 h3,
 p {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 h1,
@@ -52,17 +52,18 @@ h2 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   letter-spacing: 0;
+  text-wrap: balance;
 }
 
 h1 {
-  max-width: 11ch;
-  font-size: clamp(3.4rem, 8.5vw, 7.4rem);
-  line-height: 0.9;
+  max-width: 13.5ch;
+  font-size: clamp(3.1rem, 7.6vw, 7.1rem);
+  line-height: 0.94;
 }
 
 h2 {
   font-size: clamp(2.15rem, 5vw, 4.4rem);
-  line-height: 1;
+  line-height: 1.04;
 }
 
 h3 {
@@ -73,6 +74,19 @@ h3 {
 
 p {
   margin: 0;
+  text-wrap: pretty;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .site-header {
@@ -94,15 +108,16 @@ p {
 
 .brand {
   display: grid;
-  min-width: 11rem;
+  min-width: min(19rem, 62vw);
   text-decoration: none;
 }
 
 .brand-name {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.28rem;
+  font-size: clamp(1.08rem, 1.5vw, 1.28rem);
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
 .brand-subtitle {
@@ -131,6 +146,10 @@ nav a {
 nav a:hover,
 nav a:focus-visible {
   color: #cce4ff;
+}
+
+.menu-toggle {
+  display: none;
 }
 
 .hero {
@@ -741,26 +760,108 @@ nav a:focus-visible {
 }
 
 @media (max-width: 900px) {
-  .site-header,
+  .site-header {
+    position: fixed;
+    align-items: center;
+    padding: 0.75rem 1rem;
+  }
+
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .site-header {
+  .menu-toggle {
     position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    z-index: 2;
+    display: inline-grid;
+    flex: 0 0 auto;
+    width: 2.8rem;
+    height: 2.8rem;
+    place-items: center;
+    padding: 0;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span[aria-hidden="true"] {
+    width: 100%;
+    max-width: 1.25rem;
+    height: 2px;
+    grid-area: 1 / 1;
+    background: currentColor;
+    border-radius: 999px;
+    transition:
+      transform 180ms ease,
+      opacity 180ms ease;
+  }
+
+  .menu-toggle span[aria-hidden="true"]:nth-child(2) {
+    transform: translateY(-6px);
+  }
+
+  .menu-toggle span[aria-hidden="true"]:nth-child(4) {
+    transform: translateY(6px);
+  }
+
+  .site-header.menu-open .menu-toggle span[aria-hidden="true"]:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  .site-header.menu-open .menu-toggle span[aria-hidden="true"]:nth-child(3) {
+    opacity: 0;
+  }
+
+  .site-header.menu-open .menu-toggle span[aria-hidden="true"]:nth-child(4) {
+    transform: rotate(-45deg);
   }
 
   nav {
-    width: 100%;
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 1rem;
+    left: 1rem;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     justify-content: stretch;
-    row-gap: 0.55rem;
+    gap: 0.2rem;
+    padding: 0.65rem;
+    background: rgba(6, 29, 63, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 18px 44px rgba(6, 29, 63, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.5rem);
+    visibility: hidden;
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 180ms ease;
   }
 
   nav a {
     min-width: 0;
+    padding: 0.8rem 0.9rem;
+    border-radius: 6px;
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .site-header.menu-open nav {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
   }
 
   .hero {
@@ -781,7 +882,9 @@ nav a:focus-visible {
   }
 
   h1 {
-    max-width: 9ch;
+    max-width: 14ch;
+    font-size: clamp(2.7rem, 10.5vw, 5.1rem);
+    line-height: 1;
   }
 
   .future-grid,
@@ -824,9 +927,37 @@ nav a:focus-visible {
 }
 
 @media (max-width: 560px) {
+  .brand {
+    min-width: 0;
+  }
+
+  .brand-name {
+    max-width: 13.5rem;
+    font-size: 1rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.64rem;
+  }
+
   nav {
-    column-gap: 0.8rem;
-    font-size: 0.68rem;
+    font-size: 0.72rem;
+  }
+
+  h1 {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 10.5vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero-theme,
+  .future-line,
+  .forward-statement,
+  .community-takeaway {
+    text-wrap: balance;
   }
 
   .button {
