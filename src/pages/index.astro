@@ -64,21 +64,6 @@ const communityGallery = [
   },
 ];
 
-const voices = [
-  {
-    quote: '[Add short endorsement from a parent, educator, community member, or person who has worked alongside Naureen.]',
-    name: '[Name, relationship to Columbia schools]',
-  },
-  {
-    quote: '[Add a specific quote about preparation, listening, service, or community involvement.]',
-    name: '[Name, relationship to Columbia schools]',
-  },
-  {
-    quote: '[Add a character-focused quote that feels credible and grounded, not promotional.]',
-    name: '[Name, relationship to Columbia schools]',
-  },
-];
-
 const voteLinks = [
   {
     label: 'Voter registration',
@@ -333,26 +318,6 @@ const voteLinks = [
             <p>
               This section should feel personal and grounded, not like a resume. It should help visitors understand the person behind the campaign and the community connection behind the service.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="voices-section" id="voices" aria-labelledby="voices-title">
-        <div class="section-inner voices-grid">
-          <div>
-            <p class="section-kicker">Community voices</p>
-            <h2 id="voices-title">Shared Experiences and Perspectives</h2>
-            <p>
-              This section will give parents, educators, community members, and people who have worked alongside me a place to share their experiences in their own words.
-            </p>
-          </div>
-          <div class="voice-list">
-            {voices.map((voice) => (
-              <figure>
-                <blockquote>{voice.quote}</blockquote>
-                <figcaption>{voice.name}</figcaption>
-              </figure>
-            ))}
           </div>
         </div>
       </section>
