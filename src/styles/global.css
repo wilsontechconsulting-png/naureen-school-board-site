@@ -276,6 +276,10 @@ nav a:focus-visible {
   background: var(--white);
 }
 
+.future-section .section-inner {
+  padding-top: clamp(4rem, 7vw, 6rem);
+}
+
 .future-grid,
 .experience-grid,
 .progress-grid,
@@ -320,8 +324,8 @@ nav a:focus-visible {
 
 .focus-backdrop {
   position: absolute;
-  inset: 0 auto 0 0;
-  width: min(47vw, 36rem);
+  inset: 0;
+  width: 100%;
   opacity: 1;
 }
 
@@ -330,16 +334,16 @@ nav a:focus-visible {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: 46% center;
-  filter: saturate(0.92) contrast(0.96);
+  object-position: 16% center;
+  filter: saturate(1.02) contrast(1.02);
 }
 
 .focus-section::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 87, 184, 0.54) 0%, rgba(6, 29, 63, 0.78) 32%, rgba(6, 29, 63, 0.97) 62%, rgba(6, 29, 63, 0.92) 100%),
-    linear-gradient(0deg, rgba(6, 29, 63, 0.84), rgba(0, 87, 184, 0.16));
+    linear-gradient(90deg, rgba(0, 87, 184, 0.14) 0%, rgba(6, 29, 63, 0.34) 30%, rgba(6, 29, 63, 0.88) 58%, rgba(6, 29, 63, 0.94) 100%),
+    linear-gradient(0deg, rgba(6, 29, 63, 0.48), rgba(0, 87, 184, 0.1));
   content: "";
 }
 
@@ -912,13 +916,13 @@ nav a:focus-visible {
   }
 
   .focus-backdrop img {
-    object-position: 48% top;
+    object-position: 48% 8%;
   }
 
   .focus-section::after {
     background:
-      linear-gradient(0deg, rgba(6, 29, 63, 0.98) 0%, rgba(6, 29, 63, 0.9) 56%, rgba(0, 87, 184, 0.6) 100%),
-      rgba(6, 29, 63, 0.78);
+      linear-gradient(0deg, rgba(6, 29, 63, 0.94) 0%, rgba(6, 29, 63, 0.84) 56%, rgba(0, 87, 184, 0.26) 100%),
+      linear-gradient(90deg, rgba(6, 29, 63, 0.34), rgba(6, 29, 63, 0.74));
   }
 
   .about-copy-only .prose {
