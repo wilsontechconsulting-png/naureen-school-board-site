@@ -936,15 +936,20 @@ nav a:focus-visible {
   }
 
   .focus-section {
+    background: var(--blue-deep);
+  }
+
+  .focus-section::before {
+    display: block;
+    height: clamp(24rem, 94vw, 34rem);
     background:
-      linear-gradient(90deg, rgba(0, 87, 184, 0.2), rgba(0, 87, 184, 0.12)),
-      url("images/naureen-heart-focus.jpg") 42% 18% / cover no-repeat,
-      var(--blue-deep);
+      linear-gradient(90deg, rgba(0, 87, 184, 0.16), rgba(0, 87, 184, 0.08)),
+      url("images/naureen-heart-focus.jpg") 50% 12% / cover no-repeat;
+    content: "";
   }
 
   .focus-section::after {
-    background:
-      linear-gradient(0deg, rgba(6, 29, 63, 0.9) 0%, rgba(6, 29, 63, 0.64) 52%, rgba(6, 29, 63, 0.06) 100%);
+    display: none;
   }
 
   .focus-intro,
@@ -953,18 +958,11 @@ nav a:focus-visible {
   }
 
   .focus-layout {
-    min-height: clamp(48rem, 130vw, 62rem);
-    padding-top: clamp(20rem, 58vw, 31rem);
+    padding-top: clamp(3rem, 9vw, 4.5rem);
   }
 
   .focus-layout::before {
-    top: clamp(18rem, 54vw, 29rem);
-    right: -1rem;
-    bottom: clamp(2.5rem, 8vw, 4rem);
-    left: -1rem;
-    width: auto;
-    background:
-      linear-gradient(0deg, rgba(6, 29, 63, 0.92), rgba(6, 29, 63, 0.58) 72%, rgba(6, 29, 63, 0));
+    display: none;
   }
 
   .about-copy-only .prose {
