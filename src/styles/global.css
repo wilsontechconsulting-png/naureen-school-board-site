@@ -320,31 +320,16 @@ nav a:focus-visible {
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-dark) 46%, var(--blue) 100%);
-}
-
-.focus-backdrop {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: min(45vw, 40rem);
-  opacity: 1;
-}
-
-.focus-backdrop img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: 50% center;
-  filter: saturate(1.02) contrast(1.02);
+    linear-gradient(90deg, rgba(0, 87, 184, 0.22), rgba(0, 87, 184, 0.16)),
+    url("images/naureen-heart-focus.jpg") 23% 43% / cover no-repeat,
+    var(--blue-deep);
 }
 
 .focus-section::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 87, 184, 0.08) 0%, rgba(6, 29, 63, 0.08) 30%, rgba(6, 29, 63, 0.76) 45%, rgba(6, 29, 63, 0.98) 100%),
-    linear-gradient(0deg, rgba(6, 29, 63, 0.32), rgba(0, 87, 184, 0.04));
+    linear-gradient(90deg, rgba(6, 29, 63, 0) 0%, rgba(6, 29, 63, 0.08) 34%, rgba(6, 29, 63, 0.76) 60%, rgba(6, 29, 63, 0.94) 100%);
   content: "";
 }
 
@@ -355,6 +340,19 @@ nav a:focus-visible {
   grid-template-columns: minmax(18rem, 0.82fr) minmax(0, 1.18fr);
   gap: clamp(2.5rem, 8vw, 7rem);
   align-items: start;
+}
+
+.focus-layout::before {
+  position: absolute;
+  z-index: -1;
+  top: clamp(3rem, 6vw, 5rem);
+  right: max(-1rem, calc((1120px - 100vw) / 2));
+  bottom: clamp(3rem, 6vw, 5rem);
+  width: min(58rem, 68vw);
+  background:
+    linear-gradient(90deg, rgba(6, 29, 63, 0), rgba(6, 29, 63, 0.68) 32%, rgba(6, 29, 63, 0.88));
+  content: "";
+  pointer-events: none;
 }
 
 .focus-intro {
@@ -923,21 +921,16 @@ nav a:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .focus-backdrop {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: clamp(22rem, 82vw, 31rem);
-  }
-
-  .focus-backdrop img {
-    object-position: 50% 12%;
+  .focus-section {
+    background:
+      linear-gradient(90deg, rgba(0, 87, 184, 0.2), rgba(0, 87, 184, 0.12)),
+      url("images/naureen-heart-focus.jpg") 42% 18% / cover no-repeat,
+      var(--blue-deep);
   }
 
   .focus-section::after {
     background:
-      linear-gradient(0deg, rgba(6, 29, 63, 0.98) 0%, rgba(6, 29, 63, 0.86) 48%, rgba(0, 87, 184, 0.12) 100%),
-      linear-gradient(90deg, rgba(6, 29, 63, 0.1), rgba(6, 29, 63, 0.54));
+      linear-gradient(0deg, rgba(6, 29, 63, 0.9) 0%, rgba(6, 29, 63, 0.64) 52%, rgba(6, 29, 63, 0.06) 100%);
   }
 
   .focus-intro,
@@ -946,7 +939,18 @@ nav a:focus-visible {
   }
 
   .focus-layout {
-    padding-top: clamp(2.25rem, 7vw, 3.5rem);
+    min-height: clamp(48rem, 130vw, 62rem);
+    padding-top: clamp(20rem, 58vw, 31rem);
+  }
+
+  .focus-layout::before {
+    top: clamp(18rem, 54vw, 29rem);
+    right: -1rem;
+    bottom: clamp(2.5rem, 8vw, 4rem);
+    left: -1rem;
+    width: auto;
+    background:
+      linear-gradient(0deg, rgba(6, 29, 63, 0.92), rgba(6, 29, 63, 0.58) 72%, rgba(6, 29, 63, 0));
   }
 
   .about-copy-only .prose {
