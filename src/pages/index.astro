@@ -344,8 +344,30 @@ const voteLinks = [
             <p>
               Respectful questions, conversations, and different perspectives are welcome, even when we do not agree. Open communication is part of how a community stays connected to its schools.
             </p>
-            <a class="button primary" href="mailto:campaign@example.com">Email the campaign</a>
-            <p class="small-note">Replace campaign@example.com with the official campaign email before launch.</p>
+            <form class="question-form" data-question-form>
+              <div class="form-row">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="form-row">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="form-row">
+                <label for="contact-phone">Phone</label>
+                <input id="contact-phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+              <div class="form-row">
+                <label for="contact-message">Question or message</label>
+                <textarea id="contact-message" name="message" rows="5" required></textarea>
+              </div>
+              <div class="form-row trap-field" aria-hidden="true">
+                <label for="contact-website">Website</label>
+                <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              <button class="button primary" type="submit">Send message</button>
+              <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+            </form>
           </div>
         </div>
       </section>
@@ -422,6 +444,56 @@ const voteLinks = [
         document.addEventListener('keydown', (event) => {
           if (event.key === 'Escape') {
             closeMenu();
+          }
+        });
+      }
+
+      const questionForm = document.querySelector('[data-question-form]');
+      const formStatus = document.querySelector('[data-form-status]');
+      const contactEndpoint = 'https://naureen-school-board-site.mavenpro.chatgpt.site/api/contact';
+
+      if (questionForm instanceof HTMLFormElement && formStatus) {
+        questionForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const submitButton = questionForm.querySelector('button[type="submit"]');
+          const formData = new FormData(questionForm);
+          const payload = Object.fromEntries(formData.entries());
+
+          formStatus.className = 'form-status';
+          formStatus.textContent = 'Sending...';
+
+          if (submitButton instanceof HTMLButtonElement) {
+            submitButton.disabled = true;
+          }
+
+          try {
+            const response = await fetch(contactEndpoint, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(payload),
+            });
+
+            const result = await response.json().catch(() => ({}));
+
+            if (!response.ok || !result.ok) {
+              throw new Error(result.message || 'We could not send your message right now.');
+            }
+
+            questionForm.reset();
+            formStatus.className = 'form-status success';
+            formStatus.textContent = 'Thanks. Your message has been sent.';
+          } catch (error) {
+            formStatus.className = 'form-status error';
+            formStatus.textContent = error instanceof Error
+              ? error.message
+              : 'We could not send your message right now.';
+          } finally {
+            if (submitButton instanceof HTMLButtonElement) {
+              submitButton.disabled = false;
+            }
           }
         });
       }
