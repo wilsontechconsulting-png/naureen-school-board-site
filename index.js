@@ -1,4 +1,4 @@
-const DEFAULT_FROM_EMAIL = "Reelect Naureen for Columbia School Board <onboarding@resend.dev>";
+const DEFAULT_FROM_EMAIL = "Reelect Naureen for Columbia School Board <contact@reelectnaureen.com>";
 const DEFAULT_TO_EMAIL = "naureen@crossroads-realtygroup.com";
 const DEFAULT_BCC_EMAIL = "wilsontech.consulting@gmail.com";
 const ALLOWED_ORIGINS = new Set([
