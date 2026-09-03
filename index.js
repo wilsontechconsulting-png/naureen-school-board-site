@@ -3,6 +3,8 @@ const DEFAULT_TO_EMAIL = "naureen@crossroads-realtygroup.com";
 const DEFAULT_BCC_EMAIL = "wilsontech.consulting@gmail.com";
 const ALLOWED_ORIGINS = new Set([
   "https://wilsontechconsulting-png.github.io",
+  "https://reelectnaureen.com",
+  "https://www.reelectnaureen.com",
   "https://naureen-school-board-site.astute-ox-8061.chatgpt.site",
   "https://naureen-school-board-site.mavenpro.chatgpt.site",
 ]);
